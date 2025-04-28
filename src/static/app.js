@@ -27,6 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
         `;
 
+        // Add additional activities
+        const additionalActivities = [
+          { name: "Soccer", description: "Team sport played with a ball", schedule: "Saturdays at 10 AM", type: "sport" },
+          { name: "Basketball", description: "Fast-paced team sport", schedule: "Wednesdays at 6 PM", type: "sport" },
+          { name: "Painting", description: "Express your creativity with colors", schedule: "Fridays at 4 PM", type: "art" },
+          { name: "Dance", description: "Learn various dance styles", schedule: "Mondays at 5 PM", type: "art" },
+          { name: "Chess", description: "Strategic board game", schedule: "Tuesdays at 3 PM", type: "intellectual" },
+          { name: "Book Club", description: "Discuss and explore books", schedule: "Thursdays at 7 PM", type: "intellectual" },
+        ];
+
+        additionalActivities.forEach((activity) => {
+          const extraActivityCard = document.createElement("div");
+          extraActivityCard.className = "activity-card";
+
+          extraActivityCard.innerHTML = `
+            <h4>${activity.name}</h4>
+            <p>${activity.description}</p>
+            <p><strong>Schedule:</strong> ${activity.schedule}</p>
+          `;
+
+          activitiesList.appendChild(extraActivityCard);
+
+          // Add option to select dropdown
+          const option = document.createElement("option");
+          option.value = activity.name;
+          option.textContent = activity.name;
+          activitySelect.appendChild(option);
+        });
+
         activitiesList.appendChild(activityCard);
 
         // Add option to select dropdown
