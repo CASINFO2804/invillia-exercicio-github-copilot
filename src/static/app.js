@@ -29,12 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add additional activities
         const additionalActivities = [
-          { name: "Soccer", description: "Team sport played with a ball", schedule: "Saturdays at 10 AM", type: "sport" },
-          { name: "Basketball", description: "Fast-paced team sport", schedule: "Wednesdays at 6 PM", type: "sport" },
-          { name: "Painting", description: "Express your creativity with colors", schedule: "Fridays at 4 PM", type: "art" },
-          { name: "Dance", description: "Learn various dance styles", schedule: "Mondays at 5 PM", type: "art" },
-          { name: "Chess", description: "Strategic board game", schedule: "Tuesdays at 3 PM", type: "intellectual" },
-          { name: "Book Club", description: "Discuss and explore books", schedule: "Thursdays at 7 PM", type: "intellectual" },
+          { name: "Tennis", description: "Racket sport played individually or in pairs", schedule: "Sundays at 9 AM", type: "sport" },
+          { name: "Swimming", description: "Improve your swimming skills", schedule: "Fridays at 7 AM", type: "sport" },
+          { name: "Sculpting", description: "Create art with clay and tools", schedule: "Thursdays at 2 PM", type: "art" },
+          { name: "Photography", description: "Learn to capture stunning photos", schedule: "Saturdays at 3 PM", type: "art" },
+          { name: "Philosophy Club", description: "Discuss philosophical ideas and concepts", schedule: "Mondays at 6 PM", type: "intellectual" },
+          { name: "Coding Workshop", description: "Learn programming basics", schedule: "Wednesdays at 5 PM", type: "intellectual" },
         ];
 
         additionalActivities.forEach((activity) => {
@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
           option.textContent = activity.name;
           activitySelect.appendChild(option);
         });
+
+        // No additional activities are redefined here to avoid duplication
 
         activitiesList.appendChild(activityCard);
 
