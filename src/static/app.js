@@ -27,6 +27,37 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
         `;
 
+        // Add additional activities
+        const additionalActivities = [
+          { name: "Tennis", description: "Racket sport played individually or in pairs", schedule: "Sundays at 9 AM", type: "sport" },
+          { name: "Swimming", description: "Improve your swimming skills", schedule: "Fridays at 7 AM", type: "sport" },
+          { name: "Sculpting", description: "Create art with clay and tools", schedule: "Thursdays at 2 PM", type: "art" },
+          { name: "Photography", description: "Learn to capture stunning photos", schedule: "Saturdays at 3 PM", type: "art" },
+          { name: "Philosophy Club", description: "Discuss philosophical ideas and concepts", schedule: "Mondays at 6 PM", type: "intellectual" },
+          { name: "Coding Workshop", description: "Learn programming basics", schedule: "Wednesdays at 5 PM", type: "intellectual" },
+        ];
+
+        additionalActivities.forEach((activity) => {
+          const extraActivityCard = document.createElement("div");
+          extraActivityCard.className = "activity-card";
+
+          extraActivityCard.innerHTML = `
+            <h4>${activity.name}</h4>
+            <p>${activity.description}</p>
+            <p><strong>Schedule:</strong> ${activity.schedule}</p>
+          `;
+
+          activitiesList.appendChild(extraActivityCard);
+
+          // Add option to select dropdown
+          const option = document.createElement("option");
+          option.value = activity.name;
+          option.textContent = activity.name;
+          activitySelect.appendChild(option);
+        });
+
+        // No additional activities are redefined here to avoid duplication
+
         activitiesList.appendChild(activityCard);
 
         // Add option to select dropdown
